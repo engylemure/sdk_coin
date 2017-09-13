@@ -34,4 +34,4 @@ O script 'example.php' possui uma exemplificação de cada um dos usos.
 
 ## Autor
 
-* ** Jordão Rodrigues Oliveira Rosario ** - [engylemure](https://github.com/engylemure)
+* **Jordão Rodrigues Oliveira Rosario** - [engylemure](https://github.com/engylemure)
