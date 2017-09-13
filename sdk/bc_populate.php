@@ -12,7 +12,7 @@ while(TRUE){
     $ticker->save();
     $ticker->info();
     // Tempo entre armazenamento de cada uma das requisicoes.
-    $get_time = 5;
+    $get_time = 60;
     sleep($get_time);
 }
 ?>

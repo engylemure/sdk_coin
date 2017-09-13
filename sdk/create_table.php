@@ -1,6 +1,6 @@
 <?php
 /*
-    Script responsavel por efetuar a criacao da tabela responsavel por armazenar as informacoes
+    Script responsavel por efetuar a criacao da tabela que ira armazenar as informacoes
     do Ticker, utilizando as configuracoes disponibilizadas pelo server_config.php.
 */
 include('server_config.php') ;
@@ -15,8 +15,8 @@ date INT(32) NOT NULL
 )";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Table TICKER created successfully\n";
+    //echo "Table TICKER created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error ."\n";
+    //echo "Error creating table: " . $conn->error ."\n";
 }
 ?>
