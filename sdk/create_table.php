@@ -3,7 +3,7 @@
     Script responsavel por efetuar a criacao da tabela que ira armazenar as informacoes
     do Ticker, utilizando as configuracoes disponibilizadas pelo server_config.php.
 */
-include('server_config.php') ;
+require_once('server_config.php') ;
 $sql = "CREATE TABLE TICKER (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 high DECIMAL(16,10) NOT NULL,

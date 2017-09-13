@@ -1,6 +1,6 @@
 <?php
 
-include("bc_ticker.php");
+require_once("bc_ticker.php");
 $ticker = new Ticker();
 // Exemplo do createInstance
 $ticker = $ticker->createInstance();

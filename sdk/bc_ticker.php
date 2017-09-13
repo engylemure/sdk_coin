@@ -1,5 +1,5 @@
 <?php
-include('create_table.php');
+require_once('create_table.php');
     /*
         -Classe
         Ticker - Objetivo: Responsavel por armazenar e inserir as informacoes de um ticker.

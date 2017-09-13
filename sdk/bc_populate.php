@@ -1,5 +1,5 @@
 <?php
-include("bc_ticker.php");
+require_once("bc_ticker.php");
 /*
     Script responsavel por armazenar as informacoes disponibilizadas pelo link
     'https://www.mercadobitcoin.net/api/v2/ticker/'
