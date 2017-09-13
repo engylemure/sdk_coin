@@ -65,8 +65,9 @@ include('create_table.php');
         /*
          Retorna as informacoes armazenadas no banco de dados referentes a uma data em Era Unix
         */
-        public function getDate($date):Ticker{
-            $sql = "SELECT * FROM TICKER where (date > $sdate-5) AND (date < $date+5) order by date asc limit 1";
+        public function getDate($date){
+            global $conn;
+            $sql = "SELECT * FROM TICKER where (date > $date-5) AND (date < $date+5) order by date asc limit 1";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                $row = $result->fetch_assoc();
@@ -79,20 +80,22 @@ include('create_table.php');
                $this->date = gmdate("Y-m-d\ H:i:s",$this->date_unix);
             }
             else {
-                echo "We dont have any record about that date.\n";
+                return null;
             }
             return $this;
         }
         /*
           Retorna um array contendo os Ticker por hora de um periodo, determinado pelo seu
-          Inicio e fim em Era Unix
+          Inicio($date_b) e fim($date_e) em Era Unix
+          e o intervalo ($interval), todos em segundos.
         */
-        public function getPeriod($date_b,$date_e){
-            $hour = 3600;
+        public function getPeriod($date_b,$date_e, $interval){
             $array_ticker = array();
-            for($i_date = $date_b; $i_date < $date_e; $i_date = $idate+hour){
+            for($i_date = $date_b; $i_date < $date_e; $i_date = $i_date+$interval){
               $aux_ticker = new Ticker();
-              array_push($array_ticker,$aux_ticker->getDate($i_date));
+                $new_element = $aux_ticker->getDate($i_date);
+                if($new_element!=null)
+                array_push($array_ticker,$new_element);             
             }
             return $array_ticker;
         }
