@@ -30,7 +30,7 @@ que é o tempo de atualização do conteudo do mesmo.
 
 ## Exemplo
 
-O script [example.php](https://github.com/engylemure/sdk_coin/blob/master/sdk//example.php) possui uma exemplificação de cada um dos usos.
+O script [example.php](https://github.com/engylemure/sdk_coin/blob/master/sdk//example.php) possui uma exemplificação de cada um dos usos, enquanto o [graph_example.php](https://github.com/engylemure/sdk_coin/blob/master/sdk//graph_example.php) consta com uma aplicacao mais pratica.
 
 ## Autor
 
