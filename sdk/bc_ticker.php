@@ -86,7 +86,7 @@ require_once('create_table.php');
         */
         public function getByDate($date){
             global $conn;
-            $sql = "SELECT * FROM TICKER where (date > $date-5) AND (date < $date+5) order by date asc limit 1";
+            $sql = "SELECT * FROM TICKER where (date > $date-60) AND (date < $date+60) order by date asc limit 1";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                $row = $result->fetch_assoc();

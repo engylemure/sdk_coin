@@ -3,12 +3,12 @@
   <?php
         require_once("bc_ticker.php");
         $dataPoints = array();
-        array_push($dataPoints,array('Date','High','Low'));
+        array_push($dataPoints,array('Date','High','Low','Last'));
         $ticker = new Ticker();
         $ticker->createInstance();
-        $array_ticker = $ticker->getByPeriod($ticker->getDateUnix()-3600*48,$ticker->getDateUnix(),30);
+        $array_ticker = $ticker->getByPeriod($ticker->getDateUnix()-3600*24,$ticker->getDateUnix(),3600);
         foreach($array_ticker as $k => $var){
-            array_push($dataPoints, array($var->getDate(), $var->getHigh(),$var->getLow()));
+            array_push($dataPoints, array($var->getDate(), $var->getHigh(),$var->getLow(),$var->getLast()));
         }
     ?>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
