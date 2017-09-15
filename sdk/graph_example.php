@@ -4,11 +4,10 @@
         require_once("bc_ticker.php");
         $dataPoints = array();
         array_push($dataPoints,array('Date','High','Low','Last'));
-        array_push($dataPoints,array(' ',0.0,0.0,0.0));
         $ticker = new Ticker();
         $ticker->createInstance();
         $ticker->info();
-        $array_ticker = $ticker->getByPeriod($ticker->getDateUnix()-3600*24,$ticker->getDateUnix(),60);
+        $array_ticker = $ticker->getByPeriod($ticker->getDateUnix()-3600*72,$ticker->getDateUnix(),60);
         foreach($array_ticker as $k => $var){
             array_push($dataPoints, array($var->getDate(), $var->getHigh(),$var->getLow(),$var->getLast()));
         }
