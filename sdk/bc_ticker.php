@@ -66,11 +66,11 @@ require_once('create_table.php');
             global $conn;
             $n_empty = 0;
             foreach($this as $key => $value){
-                if($value == 0){
+                if($value == 0 || $value == 0.0){
                     $n_empty=$n_empty+1;
                 }
             }
-            if($n_empty!=6)return ;
+            if($n_empty>5)return ;
             $sql = "INSERT INTO TICKER (high, low, vol, last, buy, date)
             VALUES($this->high, $this->low, $this->vol, $this->last, $this->buy, $this->date_unix)";
             if ($conn->query($sql)==TRUE) {
@@ -79,6 +79,7 @@ require_once('create_table.php');
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn)."\n";
             }
         }
+
         /*
          Retorna as informacoes armazenadas no banco de dados referentes a uma data em Era Unix
          caso a data($date) informada não esteja contida no Banco de dados a função retorna
